@@ -18,14 +18,6 @@ patchesStrategicMerge:
 - configmap-patch.yaml
 - service-patch.yaml
 
-patchesJson6902:
-- target:
-    group: apps
-    version: v1
-    kind: Deployment
-    name: web-app
-  path: cpu-limit-patch.json
-
 replicas:
 - name: web-app
   count: 3
@@ -33,3 +25,11 @@ replicas:
 images:
 - name: nginx
   newTag: "1.21"
+
+patchesJson6902:
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: web-app
+  path: cpu-limit-patch.json
