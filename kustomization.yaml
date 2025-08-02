@@ -12,3 +12,9 @@ commonLabels:
 
 commonAnnotations:
   description: "Web application base configuration"
+
+secretGenerator:
+- name: web-app-secret
+  literals:
+  - username=admin
+  - password=defaultpass
